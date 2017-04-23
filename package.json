@@ -1,13 +1,13 @@
 {
-  "name": "magic-mirror-module-rest",
+  "name": "magic-mirror-module-homey-better-logic",
   "version": "1.0.0",
-  "description": "Show values from a url",
-  "main": "MMM-Rest.js",
-  "author": "Dirk Melchers",
+  "description": "Show values from the better logic homey app",
+  "main": "MMM-Homey-BetterLogic.js",
+  "author": "Dirk Melchers & Peter Baan",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tuxdiver/MMM-Rest.git"
+    "url": "git+https://github.com/PBaan93/MMM-Homey-BetterLogic.git"
   },
   "dependencies": {
     "sprintf-js": ""

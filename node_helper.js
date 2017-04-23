@@ -1,7 +1,7 @@
 /* Magic Mirror
- * Module: MMM-Rest
+ * Module: MMM-Homey-BetterLogic
  *
- * By Dirk Melchers 
+ * By Dirk Melchers & Peter Baan
  * MIT Licensed.
  */
 var NodeHelper = require('node_helper');
@@ -17,7 +17,11 @@ module.exports = NodeHelper.create({
             var that = this;
             request({
                 url: payload.url,
-                method: 'GET'
+                method: 'GET',
+                headers: 
+                { 
+                    authorization: 'Bearer '+payload.homeyBearerToken
+                }
             }, function(error, response, body) {
                 // console.log("MMM_REST response:");
                 if (!error && response.statusCode == 200) {
