@@ -174,8 +174,8 @@ Module.register("MMM-Homey-BetterLogic",{
                 'MMM_REST_REQUEST',
                 {
                     id: id,
-                    url: 'http://'+this.config.homeyIp+'/api/app/net.i-dev.betterlogic/'+self.sections[id].betherLogicVariable,
-                    homeyBearerToken: this.config.homeyBearerToken
+                    url: 'http://'+self.config.homeyIp+'/api/app/net.i-dev.betterlogic/'+section.betherLogicVariable,
+                    homeyBearerToken: self.config.homeyBearerToken
                 }
             );
         }
