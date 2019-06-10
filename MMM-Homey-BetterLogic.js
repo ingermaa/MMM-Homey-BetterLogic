@@ -168,13 +168,13 @@ Module.register("MMM-Homey-BetterLogic",{
         for (var id in self.sections) {
             var section = self.sections[id];
             this.debugmsg('MMM-Homey-BetterLogic: getData section id: '+id);
-            this.debugmsg('MMM-Homey-BetterLogic: IRL: http://'+this.config.homeyIp+'/api/app/net.i-dev.betterlogic/'+self.sections[id].betherLogicVariable);
+            this.debugmsg('MMM-Homey-BetterLogic: URL: '+this.config.homeyIp+'/api/app/net.i-dev.betterlogic/'+self.sections[id].betherLogicVariable);
 
             this.sendSocketNotification(
                 'MMM_REST_REQUEST',
                 {
                     id: id,
-                    url: 'http://'+self.config.homeyIp+'/api/app/net.i-dev.betterlogic/'+section.betherLogicVariable,
+                    url: self.config.homeyIp+'/api/app/net.i-dev.betterlogic/'+section.betherLogicVariable,
                     homeyBearerToken: self.config.homeyBearerToken
                 }
             );
@@ -198,12 +198,13 @@ Module.register("MMM-Homey-BetterLogic",{
     
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'MMM_REST_RESPONSE' ) {
+	    console.log(notification);
             this.debugmsg('received:' + notification);
             if(payload.data && payload.data.statusCode === 200){
                 this.debugmsg("process result:"+payload.id+" data:"+payload.data.body);
                 var bodyObject = JSON.parse(payload.data.body);
-                this.debugmsg("Value:"+bodyObject.result.value);
-                this.processResult(payload.id, bodyObject.result.value);
+                this.debugmsg("Value:"+bodyObject.value);
+		this.processResult(payload.id, bodyObject.value);
             }
         }
     },

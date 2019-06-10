@@ -5,7 +5,7 @@ This module collects data from the Better Logic app from a Homey and displays it
 This project is a fork form <a href="https://github.com/Tuxdiver/MMM-Rest">MMM-REST</a> so credits to him.
 
 ## Installation
-1. Navigate into your MagicMirror's 'modules' folder and execute 'git clone https://github.com/PBaan93/MMM-Homey-BetterLogic.git'
+1. Navigate into your MagicMirror's 'modules' folder and execute 'git clone https://github.com/ingemaa/MMM-Homey-BetterLogic.git'
 2. cd 'cd MMM-Homey-BetterLogic'
 3. Execute 'npm install' to install the node dependencies.
 
@@ -24,7 +24,7 @@ modules: [
         header: 'Woonklimaat',      
         config: {
                 debug: false,
-                homeyIp: '192.168.1.2',
+                homeyIp: 'http://192.168.1.2',
                 homeyBearerToken : '1234567890abcdef1234567890abcdef',
                 sections: [
                 {
