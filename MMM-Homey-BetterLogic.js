@@ -198,7 +198,6 @@ Module.register("MMM-Homey-BetterLogic",{
     
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'MMM_REST_RESPONSE' ) {
-	    console.log(notification);
             this.debugmsg('received:' + notification);
             if(payload.data && payload.data.statusCode === 200){
                 this.debugmsg("process result:"+payload.id+" data:"+payload.data.body);
